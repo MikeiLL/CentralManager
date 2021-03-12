@@ -14,6 +14,7 @@
 		30B7EEA11FFF5EF70037DA70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30B7EE9F1FFF5EF70037DA70 /* LaunchScreen.storyboard */; };
 		30B7EEAC1FFF5EF70037DA70 /* CentralManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B7EEAB1FFF5EF70037DA70 /* CentralManagerTests.swift */; };
 		30B7EEB71FFF5EF70037DA70 /* CentralManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B7EEB61FFF5EF70037DA70 /* CentralManagerUITests.swift */; };
+		9F5B9C3625FBC6D00003567E /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5B9C3525FBC6D00003567E /* LocalNotification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		30B7EEB21FFF5EF70037DA70 /* CentralManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CentralManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B7EEB61FFF5EF70037DA70 /* CentralManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralManagerUITests.swift; sourceTree = "<group>"; };
 		30B7EEB81FFF5EF70037DA70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F5B9C3525FBC6D00003567E /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				30B7EE961FFF5EF70037DA70 /* AppDelegate.swift */,
 				30B7EE981FFF5EF70037DA70 /* ViewController.swift */,
+				9F5B9C3525FBC6D00003567E /* LocalNotification.swift */,
 				30B7EE9A1FFF5EF70037DA70 /* Main.storyboard */,
 				30B7EE9D1FFF5EF70037DA70 /* Assets.xcassets */,
 				30B7EE9F1FFF5EF70037DA70 /* LaunchScreen.storyboard */,
@@ -193,7 +196,7 @@
 				TargetAttributes = {
 					30B7EE921FFF5EF70037DA70 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = WC64T22ANZ;
+						DevelopmentTeam = NC6B78SVAG;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -270,6 +273,7 @@
 			files = (
 				30B7EE991FFF5EF70037DA70 /* ViewController.swift in Sources */,
 				30B7EE971FFF5EF70037DA70 /* AppDelegate.swift in Sources */,
+				9F5B9C3625FBC6D00003567E /* LocalNotification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,11 +425,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WC64T22ANZ;
+				DEVELOPMENT_TEAM = NC6B78SVAG;
 				INFOPLIST_FILE = CentralManager/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hahahanotoomuch.CentralManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nativevoice.CentralManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -435,11 +439,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WC64T22ANZ;
+				DEVELOPMENT_TEAM = NC6B78SVAG;
 				INFOPLIST_FILE = CentralManager/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hahahanotoomuch.CentralManager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nativevoice.CentralManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

@@ -18,10 +18,8 @@ class ViewController: UIViewController, CBCentralManagerDelegate, UITableViewDel
     var centralManager: CBCentralManager!
     var peripheral: CBPeripheral?
     
-    let kServiceUUID = "1FA2FD8A-17E0-4D3B-AF45-305DA6130E39"
-    let kCharacteristicUUID = "463FED20-DA93-45E7-B00F-B5CD99775150"
-    let kCharacteristicUUID2 = "463FED21-DA93-45E7-B00F-B5CD99775150"
-    let kCharacteristicUUID3 = "463FED22-DA93-45E7-B00F-B5CD99775150"
+    let kServiceUUID = "94515FA0-D9DD-41D4-9D2C-CA3CFFF6C83D"
+    let kCharacteristicUUID = "94515FA1-D9DD-41D4-9D2C-CA3CFFF6C83D"
     
     var discovererChars : [String: CBCharacteristic] = [:]
     
@@ -30,7 +28,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        centralManager = CBCentralManager(delegate: self, queue: nil)
+        centralManager = CBCentralManager(delegate: self, queue: nil, options: [CBCentralManagerOptionRestoreIdentifierKey: "YourUniqueIdentifierKey"])
         
         tbvScannedDevices.delegate = self
         tbvScannedDevices.dataSource = self
@@ -82,7 +80,19 @@ class ViewController: UIViewController, CBCentralManagerDelegate, UITableViewDel
     }
     
     func centralManager(_ central: CBCentralManager, willRestoreState dict: [String : Any]) {
-        
+        LocalNotification.shared.notify(title: "Manager will restore state", text: "")
+            
+        if let peripherals = dict[CBCentralManagerRestoredStatePeripheralsKey] as? [CBPeripheral] {
+            peripherals.forEach { (awakedPeripheral) in
+                print("\(Date.init()). - Awaked peripheral \(String(describing: awakedPeripheral.name))")
+                guard let localName = awakedPeripheral.name,
+                localName == "HAHAHA" else {
+                    return
+                }
+                
+                self.peripheral = awakedPeripheral
+            }
+        }
     }
     
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
@@ -123,6 +133,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, UITableViewDel
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         let value = String.init(data: characteristic.value!, encoding: .utf8)!
         self.lblReadValue.text = "\(value)"
+        LocalNotification.shared.notify(title: "did update value for characteristic", text: String(data: characteristic.value!, encoding: .utf8)!)
     }
     
     func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
@@ -177,5 +188,6 @@ extension ViewController {
         let per = self.scannedDevices[indexPath.row]
         self.centralManager.connect(per.device, options: nil)
     }
+
 }
 
