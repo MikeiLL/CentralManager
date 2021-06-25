@@ -220,10 +220,9 @@
 			};
 			buildConfigurationList = 30B7EE8E1FFF5EF70037DA70 /* Build configuration list for PBXProject "CentralManager" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
