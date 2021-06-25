@@ -59,7 +59,7 @@ class ViewController: UIViewController, CBCentralManagerDelegate, UITableViewDel
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         if let name = peripheral.name {
             if (!checkIfExisted(name)) {
-                print("didDiscoverPeripheral \(peripheral.name)")
+                print("didDiscoverPeripheral \(String(describing: peripheral.name))")
                 let tupleDeviceInfo = (device: peripheral, rssi: RSSI)
                 self.scannedDevices.append(tupleDeviceInfo)
             }
